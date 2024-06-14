@@ -1,13 +1,19 @@
 import { useNavigate } from "react-router-dom";
 import AppHeader from "../components/AppHeader";
 import products from "../data/products.js";
+import { useContext } from "react";
+import { UserDataContext } from "../App.jsx";
 
 function HomePage() {
+  const context = useContext(UserDataContext);
+
+  console.log(context);
+
   const navigate = useNavigate();
   return (
     <div>
       <div className="app-wrapper">
-        <AppHeader />
+        <AppHeader userName={context.user.username} />
       </div>
       <div className="product-list">
         {products.map((product) => {
