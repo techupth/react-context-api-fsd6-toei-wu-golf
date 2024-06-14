@@ -6,9 +6,6 @@ import { UserDataContext } from "../App.jsx";
 
 function HomePage() {
   const context = useContext(UserDataContext);
-
-  console.log(context);
-
   const navigate = useNavigate();
   return (
     <div>

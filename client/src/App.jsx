@@ -15,36 +15,20 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <UserDataContext.Provider
-                value={{
-                  user: userData,
-                }}
-              >
-                <HomePage />
-              </UserDataContext.Provider>
-            }
-          />
-          <Route
-            path="/product/view/:id"
-            element={
-              <UserDataContext.Provider
-                value={{
-                  user: userData,
-                }}
-              >
-                <ViewProductPage />
-              </UserDataContext.Provider>
-            }
-          />
-        </Routes>
-      </Router>
-    </div>
+    <UserDataContext.Provider
+      value={{
+        user: userData,
+      }}
+    >
+      <div className="App">
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/product/view/:id" element={<ViewProductPage />} />
+          </Routes>
+        </Router>
+      </div>
+    </UserDataContext.Provider>
   );
 }
 
