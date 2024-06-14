@@ -2,7 +2,10 @@ import { useNavigate } from "react-router-dom";
 import AppHeader from "../components/AppHeader";
 import products from "../data/products.js";
 
+
 function HomePage() {
+  
+
   const navigate = useNavigate();
   return (
     <div>
@@ -12,7 +15,7 @@ function HomePage() {
       <div className="product-list">
         {products.map((product) => {
           return (
-            <div className="product">
+            <div className="product" key={product.id}>
               <div className="product-preview">
                 <img
                   src="https://via.placeholder.com/250/250"
